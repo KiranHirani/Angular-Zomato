@@ -1,0 +1,29 @@
+<div>
+<div class="searchButton">
+<i class="fa fa-search" aria-hidden="true"></i> &nbsp;
+<input name="search" type="text"
+#cityName (keyup.enter)="getEntityId(cityName)">
+Zomato
+</div>
+</div>
+<br/>
+<h3 *ngIf="restaurants.length>0">
+ {{city}} 
+</h3>
+<br/>
+<div class="card"
+*ngFor="let r of restaurants">
+    <img src="{{r.image}}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{r.name}}</h5>
+      <p class="card-text">
+          Rating: {{r.rating}}
+      </p>
+      <p class="card-text">
+         Average cost for two:  Rs. {{r.averageCost}}
+      </p>
+      <p class="card-text">
+          Address: {{r.location}}
+      </p>
+    </div>
+  </div>
